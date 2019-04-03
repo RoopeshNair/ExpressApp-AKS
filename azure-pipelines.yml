@@ -30,3 +30,10 @@ stages:
         repository: 'atulmakshelm'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
+    
+    - script: |
+     #!/bin/bash
+     docker container create --name nodeapp $(imageName)
+     docker cp nodeapp:/test-routes.xml $(System.DefaultWorkingDirectory)
+     #docker cp nodeapp:/usr/src/app/coverage $(System.DefaultWorkingDirectory)
+    displayName: Script
