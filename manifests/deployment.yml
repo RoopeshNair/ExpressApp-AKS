@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: rexpressdaimler 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: rexpressdaimler 
+    spec:
+      containers:
+        - name: rexpressdaimler 
+          image: ronacr.azurecr.io/rexpressdaimler
+          ports:
+          - containerPort: 3000
