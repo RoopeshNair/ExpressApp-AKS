@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: roopeshnairexpaks 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: roopeshnairexpaks 
+    spec:
+      containers:
+        - name: roopeshnairexpaks 
+          image: ronacr.azurecr.io/roopeshnairexpaks
+          ports:
+          - containerPort: 3000
