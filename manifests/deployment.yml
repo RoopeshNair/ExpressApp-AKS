@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: expressaks 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: expressaks 
+    spec:
+      containers:
+        - name: expressaks 
+          image: ronacr.azurecr.io/expressaks
+          ports:
+          - containerPort: 3000
